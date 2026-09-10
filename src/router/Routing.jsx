@@ -92,13 +92,20 @@ const Routing = () => {
         path="/admin/auth" 
         element={<AdminProtectedAuthRoute><AdminAuthPage /></AdminProtectedAuthRoute>} 
       />
+
+      
       {/* admin routes protected */}
       <Route path="/admin" element={<AdminProtectedRoute><AdminRootLayout /></AdminProtectedRoute>} >
           <Route index element={<AdminDashboard/>} />
+
           <Route path="products" element={<AdminAllProducts/>} />
+
           <Route path="users" element={<AdminAllUsers/>} />
+
           <Route path="orders" element={<AdminAllOrders/>} />
+
           <Route path="manage" element={<AdminManage/>} />
+
       </Route>
     </Routes>
   );

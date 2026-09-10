@@ -1,4 +1,5 @@
 import React, { useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   MoreVertical,
   Search,
@@ -13,19 +14,20 @@ import { AdminContext } from "../../context/admin.context";
 
 function AllProducts() {
   const { handleDeleteProduct } = useAdminData();
+  const navigate = useNavigate();
   const { allProducts, loading, fetchAllProducts } = useContext(AdminContext);
-  console.log("image", allProducts?.[29]?.image);
+  // console.log("image", allProducts?.[29]?.image);
 
   useEffect(() => {
     fetchAllProducts();
   }, [fetchAllProducts]);
 
-  allProducts.map((product) => {
-    console.log("image", product.image);
-  });
+  // allProducts.map((product) => {
+  //   console.log("image", product.image);
+  // });
 
   const handleDelProduct = async (productId) => {
-    console.log(`Delete product with ID: ${productId}`);
+    // console.log(`Delete product with ID: ${productId}`);
     await handleDeleteProduct(productId);
     await fetchAllProducts();
   };
@@ -82,6 +84,7 @@ function AllProducts() {
           </div>
 
           <button
+            onClick={() => navigate("/admin/manage")}
             type="button"
             className="
               inline-flex h-10 items-center justify-center gap-2 rounded-xl

@@ -11,8 +11,10 @@ import {
 
 import useAdminData from "../../hooks/useAdminData";
 import { AdminContext } from "../../context/admin.context";
+import { useNavigate } from "react-router-dom";
 
 function AllUsers() {
+  const navigate = useNavigate();
   const { allUsers, loading, fetchAllUsers } = useContext(AdminContext);
   const { handleDeleteUser, handleUpdateUser } = useAdminData();
 
@@ -183,6 +185,7 @@ function AllUsers() {
             </div>
 
             <button
+              onClick={()=>navigate("/admin/mange")}
               type="button"
               className="
                 inline-flex h-10
