@@ -185,7 +185,7 @@ function AllUsers() {
             </div>
 
             <button
-              onClick={()=>navigate("/admin/mange")}
+              onClick={()=>navigate("/admin/manage")}
               type="button"
               className="
                 inline-flex h-10
